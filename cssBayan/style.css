@@ -11,10 +11,32 @@ body {
     margin: 0 auto;
     overflow: hidden;
 }
+
+.add-icon {
+    display: none;
+    background: no-repeat url("./img/add.svg");
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.cancel-icon {
+    display: none;
+    background: no-repeat url("./img/cancel.svg");
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
 .item {
     border-top: solid 2px rgba(220, 220, 220, .5);
     color: blue;
 }
+
+.item-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .item-content {
     display: none;
 }
@@ -32,14 +54,20 @@ body {
     padding-bottom: 1rem;
 }
 
-.item-input:checked ~ .item-label {
+.item-input:checked ~ .item-name {
     color: black;
+}
+
+.item-content img {
+    transition: all .2s ease-in-out;
 }
 .item-input:checked ~ .item-content img {
     width: 100%;
     max-width: 36rem;
     height: auto;
+    transform: scale(1);
 }
+
 .item-input:active+label {
     color: rgba(0,0,255, 0.5);
 }
@@ -50,7 +78,20 @@ body {
 @media (hover : hover) {
     .accordion:hover .item-label {
         color: black;
-        transition-duration: 0.5s
+        transition-duration: 0.5s;
+    }
+    .accordion:hover .item-input:checked ~ .item-name .cancel-icon {
+        display: block;
+        transition-duration: 0.5s;
+    }
+
+    .accordion:hover .add-icon {
+        display: block;
+        transition-duration: 0.5s;
+    }
+
+    .accordion:hover .item-input:checked ~ .item-name .add-icon {
+        display: none;
     }
 }
 
