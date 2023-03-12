@@ -1,0 +1,36 @@
+body {
+    background-color: #F6F6ED;
+    font-family: 'Tilt Warp', cursive;
+
+}
+
+.container {
+    max-width: 744px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+.item {
+    border-top: solid 2px rgba(220, 220, 220, .5);
+}
+
+.item-content {
+    display: none;
+}
+
+.item-input {
+    display: none;
+}
+
+.item-label {
+    display: block;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.item-input:checked ~ .item-content {
+    display: block;
+    text-align: center;
+    padding-bottom: 20px;
+}
