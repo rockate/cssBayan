@@ -3,14 +3,17 @@ body {
     font-family: 'Tilt Warp', cursive;
     margin: 0;
     padding: 0.5rem;
+    scroll-behavior: smooth;
 }
 .container {
-    min-width: 18rem;
+    font-size: 1rem;
+    max-width: 20rem;
     margin: 0 auto;
     overflow: hidden;
 }
 .item {
     border-top: solid 2px rgba(220, 220, 220, .5);
+    color: blue;
 }
 .item-content {
     display: none;
@@ -28,6 +31,10 @@ body {
     text-align: center;
     padding-bottom: 1rem;
 }
+
+.item-input:checked ~ .item-label {
+    color: black;
+}
 .item-input:checked ~ .item-content img {
     width: 100%;
     max-width: 36rem;
@@ -41,13 +48,22 @@ body {
 }
 
 @media (hover : hover) {
-    .accordion:hover {
-        color: blue;
+    .accordion:hover .item-label {
+        color: black;
+        transition-duration: 0.5s
     }
 }
 
 @media screen and (min-width: 820px) {
     .container {
-        min-width: 55rem;
+        max-width: 40rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .container {
+        max-width: 60rem;
+        font-size: 1.2rem;
     }
 }
